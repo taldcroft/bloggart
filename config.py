@@ -12,7 +12,7 @@ host = 'py4ast20.appspot.com'
 
 # Selects the theme to use. Theme names correspond to directories under
 # the 'themes' directory, containing templates and static content.
-theme = 'coolblue'
+theme = 'astropython'
 
 # Defines the URL organization to use for blog postings. Valid substitutions:
 #   slug - the identifier for the post, derived from the title

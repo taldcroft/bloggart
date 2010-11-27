@@ -41,6 +41,8 @@ skip_files: |
  (.*/RCS/.*)|
  (\..*)|
  (bulkloader.*)|
+ (themes/coolblue/.*)|
+ (themes/default/.*)|
  (dev/.*)|
  (tests/.*)|
  (docs/.*)|
