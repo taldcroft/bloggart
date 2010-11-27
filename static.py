@@ -144,7 +144,7 @@ class StaticContentHandler(webapp.RequestHandler):
     else:
       self.response.set_status(304)
 
-  @canonical_redirect
+  # @canonical_redirect
   def get(self, path):
     if not path.startswith(config.url_prefix):
       if path not in ROOT_ONLY_FILES:

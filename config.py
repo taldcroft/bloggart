@@ -1,18 +1,18 @@
 # Name of the blog
-blog_name = 'My Blog'
+blog_name = 'AstroPython 2.0'
 
 # Your name (used for copyright info)
-author_name = 'the author'
+author_name = 'Tom Aldcroft'
 
 # (Optional) slogan
-slogan = 'This is my blog'
+slogan = 'This is AstroPython 2.0'
 
 # The hostname this site will primarially serve off (used for Atom feeds)
-host = 'localhost:8080'
+host = 'py4ast20.appspot.com'
 
 # Selects the theme to use. Theme names correspond to directories under
 # the 'themes' directory, containing templates and static content.
-theme = 'default'
+theme = 'coolblue'
 
 # Defines the URL organization to use for blog postings. Valid substitutions:
 #   slug - the identifier for the post, derived from the title
@@ -87,7 +87,7 @@ html_mime_type = "text/html; charset=utf-8"
 
 # To use disqus for comments, set this to the 'short name' of the disqus forum
 # created for the purpose.
-disqus_forum = None
+disqus_forum = 'py4ast20'
 
 # Length (in words) of summaries, by default
 summary_length = 200

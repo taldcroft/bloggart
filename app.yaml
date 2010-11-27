@@ -1,5 +1,5 @@
-application: blogivandemarinome
-version: master
+application: py4ast2
+version: 0-0-2
 runtime: python
 api_version: 1
 
@@ -17,7 +17,6 @@ handlers:
 
 - url: /admin/.*
   script: admin.py
-  login: admin
 
 - url: /static/([^/]+)/(.*)
   static_files: themes/\1/static/\2
@@ -28,3 +27,29 @@ handlers:
 
 - url: /.*
   script: static.py
+
+# builtins:
+# - datastore_admin: on
+
+skip_files: |
+ ^(.*/)?(
+ (#.*#)|
+ (.*~)|
+ (tmp.*)|
+ (.*\.csv)|
+ (.*\.py[co])|
+ (.*/RCS/.*)|
+ (\..*)|
+ (bulkloader.*)|
+ (dev/.*)|
+ (tests/.*)|
+ (docs/.*)|
+ (.*\.markdown)|
+ (license\.txt)|
+ (test\.py)|
+ (app_console\.py)|
+ (astropython\.wpr)|
+ (datastore.*)|
+ (.*NOTES.*)|
+ (setup.py)
+ )$
