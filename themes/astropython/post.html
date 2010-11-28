@@ -12,6 +12,8 @@
       {% endif %}
     </p>
     
+  {{post.rendered}}
+    
     {% if config.sharing_buttons %}
         <div class="share-box">
             <ul>
@@ -51,9 +53,7 @@
             </ul>
         </div>
     {% endif %}
-    
-  {{post.rendered}}
-  
+
   <p class="postmeta">
     <span class="date">{{post.published_tz|date:config.date_format}}</span>
   </p>
