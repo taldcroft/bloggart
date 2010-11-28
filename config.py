@@ -5,7 +5,7 @@ blog_name = 'AstroPython 2.0'
 author_name = 'Tom Aldcroft'
 
 # (Optional) slogan
-slogan = 'This is AstroPython 2.0'
+slogan = 'Python for Astronomers'
 
 # The hostname this site will primarially serve off (used for Atom feeds)
 host = 'py4ast20.appspot.com'
@@ -37,24 +37,40 @@ post_path_format = '/%(year)d/%(month)02d/%(slug)s'
 #     ...
 #  ]
 # More can be supported easily, tweaking the theme. Or just using the block of type 'code'.
+
 sidebar_blocks = [
    # Block of Links
    {
       'enabled'   : True,
       'type'      : 'links',     
-      'title'     : 'Blogroll',
+      'title'     : 'Featured resources',
       'links'     : [
-         { 'title' : 'Nick Johnsonz', 'url' : 'http://blog.notdot.net/', 'external' : True, 'rel' : 'bookmark' },
-         { 'title' : 'Bill Katz', 'url' : 'http://www.billkatz.com/', 'external' : True, 'rel' : 'bookmark' },
-         { 'title' : 'Coding Horror', 'url' : 'http://www.codinghorror.com/blog/', 'external' : True, 'rel' : 'bookmark' },
-         { 'title' : 'Craphound', 'url' : 'http://craphound.com/', 'external' : True, 'rel' : 'bookmark' },
-         { 'title' : 'Neopythonic', 'url' : 'http://www.neopythonic.blogspot.com/', 'external' : True, 'rel' : 'bookmark' },
-         { 'title' : 'Schneier on Security', 'url' : 'http://www.schneier.com/blog/', 'external' : True, 'rel' : 'bookmark' },
-      ]
+            { "title": "Python", 'external' : True, 'rel' : 'bookmark',
+              "url": "http://python.org", 
+              "description": "Home page" },
+            { "title": "Numpy", 'external' : False, 'rel' : 'bookmark',
+              "url": "/2009/10/NumPy", 
+              "description": "Core numerical libraries" },
+            { "title": "Scipy", 'external' : False, 'rel' : 'bookmark',
+              "url": "/2010/01/SciPy", 
+              "description": "Scientific tools for Python" },
+            { "title": "Matplotlib", 'external' : False, 'rel' : 'bookmark',
+              "url": "/2009/11/Matplotlib", 
+              "description": "Python 2D plotting library" },
+            { "title": "ATpy", 'external' : True, 'rel' : 'bookmark',
+              "url": "/2009/11/ATpy", 
+              "description": "Astronomical tables in Python" },
+            { "title": "APLpy", 'external' : True, 'rel' : 'bookmark',
+              "url": "/2009/10/APLpy", 
+              "description": "Hi-quality imaging data plots" },
+            { "title": "Sherpa", 'external' : True, 'rel' : 'bookmark',
+              "url": "/2009/10/CIAO", 
+              "description": "Data modeling and fitting" },
+            ],
    },
    # Google Friends Connect Widget
    {
-      'enabled'   : False,
+      'enabled'   : True,
       'type'      : 'gfc',                   
       'title'     : 'Members',
       'id'        : None,              # Google Friends Connect ID
@@ -66,7 +82,7 @@ sidebar_blocks = [
       'enabled'   : True,
       'type'      : 'twitter',
       'title'     : 'Twitter',
-      'username'  : 'nicksdjohnson',   # Twitter Username
+      'username'  : 'astropython',   # Twitter Username
       'ntweets'   : 5,                 # Number of Tweets to Show
       'height'    : 400                # Widget Height (='ntweets * 100' is adviced)
    },
@@ -87,7 +103,7 @@ html_mime_type = "text/html; charset=utf-8"
 
 # To use disqus for comments, set this to the 'short name' of the disqus forum
 # created for the purpose.
-disqus_forum = 'py4ast20'
+disqus_forum = 'py4ast2'
 
 # Length (in words) of summaries, by default
 summary_length = 200

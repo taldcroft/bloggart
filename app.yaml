@@ -42,7 +42,6 @@ skip_files: |
  (\..*)|
  (bulkloader.*)|
  (themes/coolblue/.*)|
- (themes/default/.*)|
  (dev/.*)|
  (tests/.*)|
  (docs/.*)|
