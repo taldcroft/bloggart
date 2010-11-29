@@ -1,91 +1,103 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>{% block title %}Bloggart{% endblock %}</title>
+  <title>AstroPython 2.0</title>
   {% block style %}
-  <link rel="stylesheet" type="text/css" media="screen" href="{{config.url_prefix}}/static/{{config.theme}}/css/screen.css" />
+   <link rel="stylesheet" type="text/css" media="screen" href="{{config.url_prefix}}/static/{{config.theme}}/css/screen.css" />
   {% endblock %}
   {% if config.highlighting_style %}
-  <link rel="stylesheet" type="text/css" media="screen" href="{{config.url_prefix}}/static/{{config.theme}}/css/pygments_{{config.highlighting_style}}.css" />
+   <link rel="stylesheet" type="text/css" media="screen" 
+        href="{{config.url_prefix}}/static/{{config.theme}}/css/pygments_{{config.highlighting_style}}.css" />
   {% endif %}
   <link rel="alternate" type="application/atom+xml" 
 	href="{% if config.feed_proxy %}{{ config.feed_proxy }}{% else %}{{config.url_prefix}}/feeds/atom.xml{% endif %}" />
   <link rel="SHORTCUT ICON" href="{{config.url_prefix}}/static/{{config.theme}}/favicon.ico"/>
   <link rel="SHORTCUT ICON" href="{{config.url_prefix}}/favicon.ico"/>
   {% if config.rel_me %}
-  <link rel="me" href="{{config.rel_me}}" />
+   <link rel="me" href="{{config.rel_me}}" />
   {% endif %}
 
   {% for block in config.sidebar_blocks %}
-  {% ifequal block.type 'gfc' %}
-  {% if block.enabled %}
-  <!-- Include the Google Friend Connect javascript library. -->
-  <script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>  
-  {% endif %}
-  {% endifequal %}
+   {% ifequal block.type 'gfc' %}
+    {% if block.enabled %}
+     <!-- Include the Google Friend Connect javascript library. -->
+     <script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>  
+    {% endif %}
+   {% endifequal %}
   {% endfor %}
 
   {% block head %}{% endblock %}
 </head>
+
 <body>
     <!-- Header Start -->
-	<div id="header-wrap"><div id="header" class="container_16">						
-		<h1 id="logo-text"><a href="{{config.url_prefix}}/" title="">{{config.blog_name}}</a></h1>		
-		<p id="intro">{{config.slogan}}</p>
-		<div  id="nav">
-			<ul>
-				<li{% ifequal generator_class "IndexContentGenerator" %} id="current"{% endifequal %}><a href="{{config.url_prefix}}/">Home</a></li>
-				<li{% ifequal generator_class "ArchiveIndexContentGenerator" %} id="current"{% else %}{% ifequal generator_class "ArchivePageContentGenerator" %} id="current"{% endifequal %}{% endifequal %}><a href="{{config.url_prefix}}/archive/">Archive</a></li>
-        {% block menu %}{% endblock %}
-			</ul>
-		</div>		
-		<div id="header-image"></div> 
-    <form id="quick-search" action="{{config.url_prefix}}/search" method="get">
-      <p>
-        <label for="q">Search:</label>
-        <input type="hidden" name="cref" value="http://{{config.host}}{{config.url_prefix}}/cse.xml" />
-        <input type="hidden" name="cof" value="FORID:11" />
-        <input type="hidden" name="ie" value="UTF-8" />
-        <input class="tbox" type="text" name="q" size="31" />
-        <input class="btn" type="image" name="sa" value="Search" src="{{config.url_prefix}}/static/{{config.theme}}/images/search.gif" alt="Search" />
-      </p>
-    </form>
-    <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=quick-search&lang=en"></script>
-	</div></div>
-	<!-- Header End -->
+    <div id="header-wrap">
+      <div id="header" class="container_16">						
+        <div id="header-image">
+          <a href="{{config.url_prefix}}/" title="">
+            <img
+              src="{{config.url_prefix}}/static/{{config.theme}}/images/logo.png" border=0>
+          </a>
+        </div>
+        <div  id="nav">
+          <ul>
+            <li{% ifequal generator_class "IndexContentGenerator" %} id="current"{% endifequal %}><a href="{{config.url_prefix}}/">Home</a></li>
+            <li{% ifequal generator_class "ArchiveIndexContentGenerator" %} id="current"{% else %}{% ifequal generator_class "ArchivePageContentGenerator" %} id="current"{% endifequal %}{% endifequal %}><a href="{{config.url_prefix}}/archive/">Archive</a></li>
+            {% block menu %}
+            <li{% ifequal handler_class "AdminHandler" %} id="current"{% endifequal %}><a href="{{config.url_prefix}}/admin/">Posts</a></li>
+            <li{% ifequal path "/admin/newpost" %} id="current"{% endifequal %}><a href="{{config.url_prefix}}/admin/newpost">New Post</a></li>
+            {% endblock %}
+          </ul>
+        </div>		
+        <form id="quick-search" action="{{config.url_prefix}}/search" method="get">
+          <p>
+            <label for="q">Search:</label>
+            <input type="hidden" name="cref" value="http://{{config.host}}{{config.url_prefix}}/cse.xml" />
+             <input type="hidden" name="cof" value="FORID:11" />
+             <input type="hidden" name="ie" value="UTF-8" />
+             <input class="tbox" type="text" name="q" size="31" />
+             <input class="btn" type="image" name="sa" value="Search" alt="Search" 
+                    src="{{config.url_prefix}}/static/{{config.theme}}/images/search.gif" />
+          </p>
+        </form>
+        <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=quick-search&lang=en"></script>
+      </div>
+    </div>
+    <!-- Header End -->
 	
-	<!-- Content Start -->
-	<div id="content-outer"><div id="content-wrapper" class="container_16">
-		<div id="main" class="grid_12">
-      {% block body %}{% endblock %}
-		</div>
-		<div id="left-columns" class="grid_4">
-            {% for block in config.sidebar_blocks %}
-            {% if block.enabled %}
-                <div class="sidemenu">
-                    {% ifequal block.type 'links' %}
-                        <h3>{% if block.title %}{{ block.title }}{% else %}Links{% endif %}</h3>
-                        {% include "links_block.html" %}
-                    {% endifequal %}
-                    {% ifequal block.type 'gfc' %}
-                        <h3>{% if block.title %}{{ block.title }}{% else %}Members{% endif %}</h3>
-                        {% include "google_friends_connect_block.html" %}
-                    {% endifequal %}
-                    {% ifequal block.type 'twitter' %}
-                        <h3>{% if block.title %}{{ block.title }}{% else %}Twitter{% endif %}</h3>
-                        {% include "twitter_block.html" %}
-                    {% endifequal %}
-                    {% ifequal block.type 'code' %}
-                        <h3>{% if block.title %}{{ block.title }}{% else %}Code Block{% endif %}</h3>
-                        {% include block.path %}
-                    {% endifequal %}
-                </div>
-            {% endif %}
-            {% endfor %}
-		</div>
-		
-	</div></div>
-	<!-- Content End -->
+    <!-- Content Start -->
+    <div id="content-outer">
+      <div id="content-wrapper" class="container_16">
+        <div id="main" class="grid_12">
+          {% block body %}{% endblock %}
+        </div>
+        <div id="left-columns" class="grid_4">
+          {% for block in config.sidebar_blocks %}
+           {% if block.enabled %}
+             <div class="sidemenu">
+              {% ifequal block.type 'links' %}
+               <h3>{% if block.title %}{{ block.title }}{% else %}Links{% endif %}</h3>
+               {% include "links_block.html" %}
+              {% endifequal %}
+              {% ifequal block.type 'gfc' %}
+               <h3>{% if block.title %}{{ block.title }}{% else %}Members{% endif %}</h3>
+               {% include "google_friends_connect_block.html" %}
+              {% endifequal %}
+              {% ifequal block.type 'twitter' %}
+               <h3>{% if block.title %}{{ block.title }}{% else %}Twitter{% endif %}</h3>
+               {% include "twitter_block.html" %}
+              {% endifequal %}
+              {% ifequal block.type 'code' %}
+               <h3>{% if block.title %}{{ block.title }}{% else %}Code Block{% endif %}</h3>
+               {% include block.path %}
+              {% endifequal %}
+             </div>
+           {% endif %}
+          {% endfor %}
+        </div>
+    </div>
+    </div>
+    <!-- Content End -->
 	
 	<!-- Footer Start -->
     <div id="footer-wrapper" class="container_16">

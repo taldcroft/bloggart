@@ -8,7 +8,7 @@ author_name = 'Tom Aldcroft'
 slogan = 'Python for Astronomers'
 
 # The hostname this site will primarially serve off (used for Atom feeds)
-host = 'py4ast20.appspot.com'
+host = 'py4ast2.appspot.com'
 
 # Selects the theme to use. Theme names correspond to directories under
 # the 'themes' directory, containing templates and static content.
@@ -50,22 +50,22 @@ sidebar_blocks = [
               "description": "Home page" },
             { "title": "Numpy", 'external' : False, 'rel' : 'bookmark',
               "url": "/2009/10/NumPy", 
-              "description": "Core numerical libraries" },
+              "description": "Core numerics" },
             { "title": "Scipy", 'external' : False, 'rel' : 'bookmark',
               "url": "/2010/01/SciPy", 
-              "description": "Scientific tools for Python" },
+              "description": "Scientific tools" },
             { "title": "Matplotlib", 'external' : False, 'rel' : 'bookmark',
               "url": "/2009/11/Matplotlib", 
-              "description": "Python 2D plotting library" },
+              "description": "Image and data plots" },
             { "title": "ATpy", 'external' : True, 'rel' : 'bookmark',
               "url": "/2009/11/ATpy", 
-              "description": "Astronomical tables in Python" },
+              "description": "Astronomical tables" },
             { "title": "APLpy", 'external' : True, 'rel' : 'bookmark',
               "url": "/2009/10/APLpy", 
-              "description": "Hi-quality imaging data plots" },
+              "description": "Hi-quality image plots" },
             { "title": "Sherpa", 'external' : True, 'rel' : 'bookmark',
               "url": "/2009/10/CIAO", 
-              "description": "Data modeling and fitting" },
+              "description": "Modeling and fitting" },
             ],
    },
    # Google Friends Connect Widget
@@ -132,7 +132,7 @@ default_markup = 'html'
 # one of 'manni', 'perldoc', 'borland', 'colorful', 'default', 'murphy',
 # 'vs', 'trac', 'tango', 'fruity', 'autumn', 'bw', 'emacs', 'pastie',
 # 'friendly', 'native'.
-highlighting_style = 'colorful'
+highlighting_style = 'friendly'
 
 # Absolute url of the blog application use '/blog' for host/blog/
 # and '' for host/.Also remember to change app.yaml accordingly

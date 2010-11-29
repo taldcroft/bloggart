@@ -187,35 +187,37 @@ input.button {
 }
 #content-wrapper {
 	margin: 0 auto;	
-	background: #fff url(../images/content-bg.gif) repeat-y center top;	
 	padding-bottom: 35px;
 	padding-top: 5px;		
 	overflow: auto;
 }
 #header-wrap {
 	width: 100%;
-	background: #fff url(../images/bg.gif) repeat-x ;	
+        background:#333;
+        height:160px;
+        z-index:-1;
 	margin: 0; padding: 0; 
 }
 #header {
 	position: relative;
 	margin: 0 auto;
-	background: url(../images/border.gif) repeat-x left bottom; 	
-	height: 302px;	
+	height: 160px;	
+        background:#333;
 }
-#header h1#logo-text { margin: 0; padding: 0; }
-#header h1#logo-text a {
-	position: absolute; 
-	margin: 0; padding: 0 5px 0 0;
-	font: normal 50px 'Arial', 'Lucida Sans Unicode', Geneva, Verdana, Sans-Serif;
-        letter-spacing: -4px;
-        /* color: #93b876; */
-	text-decoration: none;
-		
-	/* change the values of top and left to adjust the position of the logo*/
-	top: 90px; left: 20px;	
+#header img {
+        background:#333;
+        border: none;
+	padding: 8px;
 }
-#header h1#logo-text a:hover { border: none; }
+
+#header-image a {
+	position: absolute;
+	left: 10px; top: 5px;
+	border-bottom: none;	
+        color: none;
+}
+}
+
 #header p#intro {
 	position: absolute;
 	margin: 0; padding: 0;
@@ -230,13 +232,6 @@ input.button {
 	
 	/* change the values of top and left to adjust the position */
 	top: 175px; left: 110px;		
-}
-#header #header-image {
-	position: absolute;
-	background: url(../images/header-bloggart-watermark.png) top right no-repeat;
-	width: 400px;
-	height: 300px;	
-	right: 10px; top: 0;	
 }
 
 /* header quick search */
@@ -276,7 +271,8 @@ input.button {
 	position: absolute;
 	margin: 0; padding: 0;		
 	width: 880px;	
-	left: 0;	top: 5px;		
+	left: 0;	
+        top: 115px;		
 }
 #header #nav ul {
 	float: left;	
